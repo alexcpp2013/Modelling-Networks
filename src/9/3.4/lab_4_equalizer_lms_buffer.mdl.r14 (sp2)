@@ -1,0 +1,3276 @@
+Model {
+  Name			  "lab_4_equalizer_lms_buffer"
+  Version		  6.2
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.243"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5347_P100-1998"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Dec 21 23:18:04 2011"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Admin"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Nov 06 13:28:43 2012"
+  ModelVersionFormat	  "1.%<AutoIncrement:243>"
+  ConfigurationManager	  "None"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  StrictBusMsg		  "None"
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.1.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.1.0"
+	  StartTime		  "0.0"
+	  StopTime		  "1"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.1.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  on
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  ParameterPooling	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.1.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterPrecisionLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.1.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.1.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.1.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      CustomSymbolStr	      "$R$N$M"
+	      MangleLength	      1
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.1.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      SimulationMode	      "normal"
+      CurrentDlgPage	      "Solver"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Abs
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ComplexToRealImag
+      Output		      "Real and imag"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      OutDataTypeMode	      "Inherit via back propagation"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      FrameConversion
+      OutFrame		      "Frame based"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SignalConversion
+      OverrideOpt	      off
+    }
+    Block {
+      BlockType		      Inport
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      "M-S-Function"
+      MFile		      "mlfile"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reference
+    }
+    Block {
+      BlockType		      Rounding
+      Operator		      "floor"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      UnitDelay
+      X0		      "0"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "lab_4_equalizer_lms_buffer"
+    Location		    [105, 159, 1061, 591]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Abs
+      Name		      "Abs"
+      Position		      [710, 180, 740, 210]
+      NamePlacement	      "alternate"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Adaptive Equalizer \nfrequency response"
+      Ports		      [1]
+      Position		      [725, 260, 760, 310]
+      BackgroundColor	      "green"
+      SourceBlock	      "dspsnks4/Spectrum\nScope"
+      SourceType	      "Spectrum Scope"
+      ShowPortLabels	      off
+      ScopeProperties	      on
+      Domain		      "Frequency"
+      HorizSpan		      "1"
+      UseBuffer		      off
+      BufferSize	      "128"
+      Overlap		      "64"
+      inpFftLenInherit	      on
+      FFTlength		      "128"
+      numAvg		      "2"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      off
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "[8 424 450 170]"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      InheritXIncr	      off
+      XIncr		      "1e-5"
+      XLabel		      "Samples"
+      YUnits		      "dB"
+      YMin		      "-5.7892131592501"
+      YMax		      "-3.17780882405879"
+      YLabel		      "Magnitude-squared, dB"
+      LineProperties	      off
+      LineStyles	      "--"
+      LineMarkers	      "None"
+      LineColors	      "[1 0 0]"
+      wintypeSpecScope	      "Hann"
+      RsSpecScope	      "50"
+      betaSpecScope	      "5"
+      winsampSpecScope	      "Periodic"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Adaptive Filter \nTaps"
+      Ports		      [1]
+      Position		      [785, 335, 820, 385]
+      BackgroundColor	      "green"
+      SourceBlock	      "dspsnks4/Vector\nScope"
+      SourceType	      "Vector Scope"
+      ScopeProperties	      on
+      Domain		      "User-defined"
+      HorizSpan		      "1"
+      DisplayProperties	      off
+      AxisGrid		      on
+      Memory		      off
+      FrameNumber	      on
+      AxisLegend	      off
+      AxisZoom		      off
+      OpenScopeAtSimStart     on
+      OpenScopeImmediately    off
+      FigPos		      "[486 427 450 170]"
+      AxisProperties	      off
+      XUnits		      "Hertz"
+      XRange		      "[0...Fs/2]"
+      InheritXIncr	      off
+      XIncr		      "1"
+      XLabel		      "Coefficient Index"
+      YUnits		      "dB"
+      YMin		      "-0.176505999051535"
+      YMax		      "1.03663535601714"
+      YLabel		      "Amplitude"
+      LineProperties	      off
+      LineMarkers	      "."
+      ShowPortLabels	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "After"
+      Tag		      "ScatterPlot"
+      Ports		      [1]
+      Position		      [600, 21, 650, 59]
+      Diagnostics	      "AllowInheritedTsInSrc"
+      SourceBlock	      "commsink2/Discrete-Time\nScatter Plot\nScope"
+      SourceType	      "Discrete-Time Scatter Plot Scope"
+      ShowPortLabels	      on
+      sampPerSymb	      "1"
+      offsetEye		      "0"
+      numTraces		      "400"
+      numNewFrames	      "10"
+      LineMarkers	      "."
+      LineColors	      "b"
+      fading		      on
+      render		      on
+      AxisGrid		      on
+      xMin		      "-1.5"
+      xMax		      "1.5"
+      yMin		      "-1.5"
+      yMax		      "1.5"
+      inphaseLabel	      "In-phase Amplitude"
+      quadratureLabel	      "Quadrature Amplitude"
+      openScopeAtSimStart     off
+      FrameNumber	      off
+      FigPos		      "[420 374 400 400]"
+      figTitle		      "Scatter Plot"
+      numLinesMax	      "8"
+      block_type_	      "scatter"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Before"
+      Tag		      "ScatterPlot"
+      Ports		      [1]
+      Position		      [470, 20, 520, 60]
+      Diagnostics	      "AllowInheritedTsInSrc"
+      SourceBlock	      "commsink2/Discrete-Time\nScatter Plot\nScope"
+      SourceType	      "Discrete-Time Scatter Plot Scope"
+      ShowPortLabels	      on
+      sampPerSymb	      "1"
+      offsetEye		      "0"
+      numTraces		      "400"
+      numNewFrames	      "10"
+      LineMarkers	      "."
+      LineColors	      "b"
+      fading		      on
+      render		      on
+      AxisGrid		      on
+      xMin		      "-1.5"
+      xMax		      "1.5"
+      yMin		      "-1.5"
+      yMax		      "1.5"
+      inphaseLabel	      "In-phase Amplitude"
+      quadratureLabel	      "Quadrature Amplitude"
+      openScopeAtSimStart     off
+      FrameNumber	      off
+      FigPos		      "[10 374 400 400]"
+      figTitle		      "Scatter Plot"
+      numLinesMax	      "8"
+      block_type_	      "scatter"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Buffer"
+      Ports		      [1, 1]
+      Position		      [350, 90, 400, 140]
+      SourceBlock	      "dspbuff3/Buffer"
+      SourceType	      "Buffer"
+      N			      "4"
+      V			      "0"
+      ic		      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Buffer1"
+      Ports		      [1, 1]
+      Position		      [205, 20, 255, 70]
+      SourceBlock	      "dspbuff3/Buffer"
+      SourceType	      "Buffer"
+      N			      "10"
+      V			      "0"
+      ic		      "0"
+    }
+    Block {
+      BlockType		      ComplexToRealImag
+      Name		      "Complex to\nReal-Imag1"
+      Ports		      [1, 2]
+      Position		      [710, 353, 740, 382]
+      Output		      "Real and imag"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [180, 205, 210, 235]
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay"
+      Ports		      [1, 1]
+      Position		      [235, 200, 290, 240]
+      SourceBlock	      "dspsigops/Delay"
+      SourceType	      "Delay"
+      dly_unit		      "Samples"
+      delay		      "0"
+      ic_detail		      off
+      dif_ic_for_ch	      off
+      dif_ic_for_dly	      off
+      ic		      "0"
+      reset_popup	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Delay1"
+      Ports		      [1, 1]
+      Position		      [710, 16, 735, 44]
+      NamePlacement	      "alternate"
+      SourceBlock	      "dspsigops/Delay"
+      SourceType	      "Delay"
+      dly_unit		      "Samples"
+      delay		      "4"
+      ic_detail		      off
+      dif_ic_for_ch	      off
+      dif_ic_for_dly	      off
+      ic		      "0"
+      reset_popup	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Error Rate\nCalculation"
+      Ports		      [2, 1]
+      Position		      [705, 72, 780, 123]
+      SourceBlock	      "commsink2/Error Rate\nCalculation"
+      SourceType	      "Error Rate Calculation"
+      N			      "4"
+      st_delay		      "0"
+      cp_mode		      "Entire frame"
+      subframe		      "[]"
+      PMode		      "Port"
+      WsName		      "ErrorVec"
+      RsMode2		      off
+      stop		      off
+      numErr		      "100"
+      maxBits		      "1e6"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Error Rate Display"
+      Ports		      [1]
+      Position		      [805, 67, 900, 133]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Error Rate Display1"
+      Ports		      [1]
+      Position		      [835, 269, 930, 371]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Error Rate Display2"
+      Ports		      [1]
+      Position		      [430, 230, 570, 300]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Error e(t)\nScope"
+      Ports		      [2]
+      Position		      [785, 186, 815, 219]
+      BackgroundColor	      "green"
+      Location		      [333, 131, 688, 411]
+      Open		      off
+      NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      TimeRange		      "1               "
+      YMin		      "5.55112e-017~-5"
+      YMax		      "1.1~5"
+      SaveToWorkspace	      on
+      DataFormat	      "StructureWithTime"
+      MaxDataPoints	      "10000"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Error message"
+      Ports		      [1]
+      Position		      [805, 28, 835, 62]
+      BackgroundColor	      "green"
+      NamePlacement	      "alternate"
+      Location		      [406, 119, 761, 399]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "1               "
+      YMin		      "-3"
+      YMax		      "0"
+      SaveToWorkspace	      on
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      MaxDataPoints	      "10000"
+    }
+    Block {
+      BlockType		      FrameConversion
+      Name		      "Frame Conversion"
+      Position		      [610, 265, 665, 305]
+      OutFrame		      "Frame based"
+    }
+    Block {
+      BlockType		      FrameConversion
+      Name		      "Frame Conversion1"
+      Position		      [620, 180, 670, 210]
+      NamePlacement	      "alternate"
+      OutFrame		      "Sample based"
+    }
+    Block {
+      BlockType		      FrameConversion
+      Name		      "Frame Conversion2"
+      Position		      [620, 215, 670, 245]
+      OutFrame		      "Sample based"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Init_Parameters"
+      Ports		      []
+      Position		      [15, 15, 108, 46]
+      BackgroundColor	      "red"
+      OpenFcn		      "lab_4_parameters"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      MaskDisplay	      "disp('lab_4_parameters')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Init_Parameters"
+	Location		[370, 355, 540, 437]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "LMS Linear\nequalizer"
+      Ports		      [2, 3]
+      Position		      [465, 111, 560, 169]
+      BackgroundColor	      "magenta"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"LMS Linear\nequalizer"
+	Location		[62, 94, 627, 522]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Input"
+	  Position		  [85, 23, 115, 37]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Desired"
+	  Position		  [85, 53, 115, 67]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "4 tap LMS time\ndomain equalizer"
+	  Ports			  [2, 3]
+	  Position		  [310, 221, 405, 279]
+	  BackgroundColor	  "cyan"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "4 tap LMS time\ndomain equalizer"
+	    Location		    [490, 148, 1258, 617]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Input"
+	      Position		      [45, 43, 75, 57]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired"
+	      Position		      [50, 98, 80, 112]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Adaptive Filter"
+	      Ports		      [2, 1]
+	      Position		      [160, 35, 240, 95]
+	      BackgroundColor	      "yellow"
+	      NamePlacement	      "alternate"
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"Adaptive Filter"
+		Location		[471, 105, 1042, 375]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Input"
+		  Position		  [25, 38, 55, 52]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Wights"
+		  Position		  [25, 98, 55, 112]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Frame Status\nConversion"
+		  Ports			  [1, 1]
+		  Position		  [80, 85, 135, 125]
+		  ShowName		  off
+		  SourceBlock		  "dspobslib/Frame Status\nConversion"
+		  SourceType		  "Frame Status Conversion"
+		  ShowPortLabels	  "off"
+		  growRefPort		  "off"
+		  outframe		  "Sample-based"
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Frame Status\nConversion1"
+		  Ports			  [1, 1]
+		  Position		  [80, 25, 135, 65]
+		  ShowName		  off
+		  SourceBlock		  "dspobslib/Frame Status\nConversion"
+		  SourceType		  "Frame Status Conversion"
+		  ShowPortLabels	  "off"
+		  growRefPort		  "off"
+		  outframe		  "Sample-based"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 210, 115, 240]
+		  Gain			  "mu"
+		  ParameterDataTypeMode	  "Inherit via internal rule"
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product"
+		  Ports			  [2, 1]
+		  Position		  [502, 125, 533, 155]
+		  Orientation		  "down"
+		  NamePlacement		  "alternate"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product1"
+		  Ports			  [2, 1]
+		  Position		  [422, 125, 453, 155]
+		  Orientation		  "down"
+		  NamePlacement		  "alternate"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product2"
+		  Ports			  [2, 1]
+		  Position		  [307, 130, 338, 160]
+		  Orientation		  "down"
+		  NamePlacement		  "alternate"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product3"
+		  Ports			  [2, 1]
+		  Position		  [197, 130, 228, 160]
+		  Orientation		  "down"
+		  NamePlacement		  "alternate"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum1"
+		  Ports			  [4, 1]
+		  Position		  [169, 185, 546, 205]
+		  Orientation		  "down"
+		  NamePlacement		  "alternate"
+		  ShowName		  off
+		  Inputs		  "++++"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  UnitDelay
+		  Name			  "Unit Delay"
+		  Position		  [265, 28, 300, 62]
+		}
+		Block {
+		  BlockType		  UnitDelay
+		  Name			  "Unit Delay1"
+		  Position		  [365, 28, 400, 62]
+		}
+		Block {
+		  BlockType		  UnitDelay
+		  Name			  "Unit Delay2"
+		  Position		  [475, 28, 510, 62]
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Equalized"
+		  Position		  [345, 230, 375, 245]
+		  Orientation		  "down"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Sum1"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Equalized"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Wights"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Frame Status\nConversion"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Input"
+		  SrcPort		  1
+		  DstBlock		  "Frame Status\nConversion1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Frame Status\nConversion1"
+		  SrcPort		  1
+		  Points		  [80, 0]
+		  Branch {
+		    DstBlock		    "Product3"
+		    DstPort		    2
+		  }
+		  Branch {
+		    DstBlock		    "Unit Delay"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Frame Status\nConversion"
+		  SrcPort		  1
+		  Points		  [65, 0]
+		  Branch {
+		    Points		    [110, 0]
+		    Branch {
+		    Points		    [115, 0]
+		    Branch {
+		    Points		    [80, 0]
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "Product1"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Product2"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "Product3"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Product"
+		  SrcPort		  1
+		  Points		  [0, 5; -20, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  4
+		}
+		Line {
+		  SrcBlock		  "Product1"
+		  SrcPort		  1
+		  Points		  [0, 5; -35, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  3
+		}
+		Line {
+		  SrcBlock		  "Product2"
+		  SrcPort		  1
+		  Points		  [-15, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Product3"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Unit Delay2"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  DstBlock		  "Product"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Unit Delay1"
+		  SrcPort		  1
+		  Points		  [0, 0; 40, 0]
+		  Branch {
+		    DstBlock		    "Product1"
+		    DstPort		    2
+		  }
+		  Branch {
+		    DstBlock		    "Unit Delay2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Unit Delay"
+		  SrcPort		  1
+		  Points		  [0, 0; 25, 0]
+		  Branch {
+		    DstBlock		    "Product2"
+		    DstPort		    2
+		  }
+		  Branch {
+		    DstBlock		    "Unit Delay1"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "LMS Algorithm"
+	      Ports		      [2, 1]
+	      Position		      [165, 127, 225, 178]
+	      Orientation	      "left"
+	      BackgroundColor	      "gray"
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"LMS Algorithm"
+		Location		[418, 207, 671, 368]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Input"
+		  Position		  [25, 38, 55, 52]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Err"
+		  Position		  [150, 25, 180, 40]
+		  Orientation		  "down"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [90, 30, 125, 60]
+		  Gain			  "mu"
+		  ParameterDataTypeMode	  "Inherit via internal rule"
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [180, 45, 210, 75]
+		  Operator		  "conj"
+		}
+		Block {
+		  BlockType		  Product
+		  Name			  "Product4"
+		  Ports			  [2, 1]
+		  Position		  [90, 94, 125, 136]
+		  Orientation		  "left"
+		  NamePlacement		  "alternate"
+		  InputSameDT		  off
+		  OutDataTypeMode	  "Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Wights"
+		  Position		  [35, 108, 65, 122]
+		  Orientation		  "left"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Product4"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Wights"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Err"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Input"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  Points		  [10, 0; 0, 65]
+		  DstBlock		  "Product4"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  Points		  [20, 0; 0, 60]
+		  DstBlock		  "Product4"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [290, 90, 320, 120]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "+-|"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Equalized"
+	      Position		      [375, 58, 405, 72]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Err"
+	      Position		      [375, 98, 405, 112]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Wights"
+	      Position		      [380, 188, 410, 202]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Desired"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "LMS Algorithm"
+	      SrcPort		      1
+	      Points		      [-50, 0]
+	      Branch {
+		Points			[0, 40]
+		DstBlock		"Wights"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -75]
+		DstBlock		"Adaptive Filter"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Input"
+	      SrcPort		      1
+	      Points		      [50, 0]
+	      Branch {
+		Points			[0, 65; 110, 0]
+		DstBlock		"LMS Algorithm"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Adaptive Filter"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [15, 0]
+	      Branch {
+		Points			[0, 60]
+		DstBlock		"LMS Algorithm"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Err"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Adaptive Filter"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Equalized"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "4 tap LMS time\ndomain equalizer1"
+	  Ports			  [2, 3]
+	  Position		  [180, 131, 275, 189]
+	  BackgroundColor	  "cyan"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "4 tap LMS time\ndomain equalizer1"
+	    Location		    [91, 132, 722, 358]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Input"
+	      Position		      [15, 28, 45, 42]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired"
+	      Position		      [15, 108, 45, 122]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Filter Taps"
+	      Ports		      [1, 1]
+	      Position		      [375, 80, 430, 120]
+	      SourceBlock	      "dspsigops/Delay"
+	      SourceType	      "Delay"
+	      dly_unit		      "Samples"
+	      delay		      "4"
+	      ic_detail		      on
+	      dif_ic_for_ch	      off
+	      dif_ic_for_dly	      off
+	      ic		      "0"
+	      reset_popup	      "None"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion"
+	      Ports		      [1, 1]
+	      Position		      [120, 15, 175, 55]
+	      ShowName		      off
+	      SourceBlock	      "dspobslib/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      ShowPortLabels	      off
+	      growRefPort	      off
+	      outframe		      "Sample-based"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion1"
+	      Ports		      [1, 1]
+	      Position		      [120, 95, 175, 135]
+	      ShowName		      off
+	      SourceBlock	      "dspobslib/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      ShowPortLabels	      off
+	      growRefPort	      off
+	      outframe		      "Sample-based"
+	    }
+	    Block {
+	      BlockType		      Math
+	      Name		      "Math\nfunctions"
+	      Ports		      [1, 1]
+	      Position		      [205, 68, 230, 92]
+	      ShowName		      off
+	      Operator		      "conj"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [270, 64, 300, 131]
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [465, 29, 490, 56]
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [65, 105, 85, 125]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum of\nElements"
+	      Ports		      [1, 1]
+	      Position		      [515, 30, 545, 60]
+	      Inputs		      "+"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutScaling	      "2^-10"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "mu"
+	      Position		      [205, 100, 245, 130]
+	      Gain		      "mu"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "sum"
+	      Ports		      [2, 1]
+	      Position		      [335, 90, 355, 110]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "++|"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Equalized"
+	      Position		      [580, 38, 610, 52]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Err"
+	      Position		      [585, 148, 615, 162]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Wts"
+	      Position		      [585, 183, 615, 197]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Input"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Frame Status\nConversion"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [0, 0; 10, 0]
+	      Branch {
+		DstBlock		"Frame Status\nConversion1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 40]
+		DstBlock		"Err"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Desired"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Math\nfunctions"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Frame Status\nConversion"
+	      SrcPort		      1
+	      Points		      [0, 0; 5, 0]
+	      Branch {
+		Points			[0, 45]
+		DstBlock		"Math\nfunctions"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Product1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Sum of\nElements"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum of\nElements"
+	      SrcPort		      1
+	      Points		      [0, 0; 10, 0]
+	      Branch {
+		DstBlock		"Equalized"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 120; -485, 0]
+		DstBlock		"Sum"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      DstBlock		      "sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "sum"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		DstBlock		"Filter Taps"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 90]
+		DstBlock		"Wts"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Filter Taps"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -35]
+	      Branch {
+		Points			[0, -15]
+		DstBlock		"Product1"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[-95, 0]
+		DstBlock		"sum"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "mu"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Frame Status\nConversion1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "mu"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "4 tap LMS time\ndomain equalizer2"
+	  Ports			  [3, 2]
+	  Position		  [180, 221, 275, 279]
+	  BackgroundColor	  "cyan"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "4 tap LMS time\ndomain equalizer2"
+	    Location		    [358, 82, 1126, 551]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Input"
+	      Position		      [20, 43, 50, 57]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired"
+	      Position		      [20, 88, 50, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Wights"
+	      Position		      [20, 153, 50, 167]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion"
+	      Ports		      [1, 1]
+	      Position		      [135, 90, 190, 130]
+	      ShowName		      off
+	      SourceBlock	      "dspobslib/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      ShowPortLabels	      off
+	      growRefPort	      off
+	      outframe		      "Sample-based"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion1"
+	      Ports		      [1, 1]
+	      Position		      [135, 30, 190, 70]
+	      ShowName		      off
+	      SourceBlock	      "dspobslib/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      ShowPortLabels	      off
+	      growRefPort	      off
+	      outframe		      "Sample-based"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      Position		      [210, 95, 245, 125]
+	      Gain		      "mu"
+	      ParameterDataTypeMode   "Inherit via internal rule"
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [557, 130, 588, 160]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [477, 130, 508, 160]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product2"
+	      Ports		      [2, 1]
+	      Position		      [362, 135, 393, 165]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product3"
+	      Ports		      [2, 1]
+	      Position		      [252, 135, 283, 165]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product4"
+	      Ports		      [3, 1]
+	      Position		      [140, 199, 175, 241]
+	      Orientation	      "left"
+	      NamePlacement	      "alternate"
+	      Inputs		      "3"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      Ports		      [2, 1]
+	      Position		      [400, 260, 430, 290]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "+-|"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      Ports		      [4, 1]
+	      Position		      [224, 190, 601, 210]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	      ShowName		      off
+	      Inputs		      "++++"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      Position		      [320, 33, 355, 67]
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay1"
+	      Position		      [420, 33, 455, 67]
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay2"
+	      Position		      [530, 33, 565, 67]
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Equalized"
+	      Position		      [680, 238, 710, 252]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Err"
+	      Position		      [680, 98, 710, 112]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Product4"
+	      SrcPort		      1
+	      Points		      [-25, 0; 0, -110]
+	      DstBlock		      "Frame Status\nConversion"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Frame Status\nConversion1"
+	      SrcPort		      1
+	      Points		      [20, 0]
+	      Branch {
+		Points			[0, 170]
+		DstBlock		"Product4"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[60, 0]
+		Branch {
+		  DstBlock		  "Product3"
+		  DstPort		  2
+		}
+		Branch {
+		  DstBlock		  "Unit Delay"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Input"
+	      SrcPort		      1
+	      DstBlock		      "Frame Status\nConversion1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Frame Status\nConversion"
+	      SrcPort		      1
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      Points		      [30, 0]
+	      Branch {
+		Points			[0, 45; -260, 0; 0, -85]
+		DstBlock		"Product4"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[195, 0; 0, -170]
+		DstBlock		"Err"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      Points		      [0, 0; 10, 0]
+	      Branch {
+		Points			[110, 0]
+		Branch {
+		  Points		  [115, 0]
+		  Branch {
+		    Points		    [80, 0]
+		    DstBlock		    "Product"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Product1"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  DstBlock		  "Product2"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Product3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Desired"
+	      SrcPort		      1
+	      Points		      [20, 0; 0, 180]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      Points		      [0, 0; 0, 30]
+	      Branch {
+		DstBlock		"Sum"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Equalized"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, 5; -20, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, 5; -35, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Product2"
+	      SrcPort		      1
+	      Points		      [-15, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Product3"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay2"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay1"
+	      SrcPort		      1
+	      Points		      [0, 0; 40, 0]
+	      Branch {
+		DstBlock		"Product1"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Unit Delay2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      Points		      [0, 0; 25, 0]
+	      Branch {
+		DstBlock		"Product2"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Unit Delay1"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "4 tap NeuroGA Evolution\n LMS time\ndomain "
+"equalizer"
+	  Ports			  [2, 2]
+	  Position		  [310, 311, 405, 369]
+	  BackgroundColor	  "cyan"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "4 tap NeuroGA Evolution\n LMS time\ndomai"
+"n equalizer"
+	    Location		    [515, 163, 1120, 503]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Input"
+	      Position		      [25, 43, 55, 57]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired"
+	      Position		      [30, 88, 60, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ADALINE\nNeural Net"
+	      Ports		      [2, 2]
+	      Position		      [235, 46, 330, 104]
+	      BackgroundColor	      "cyan"
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"ADALINE\nNeural Net"
+		Location		[515, 163, 1120, 503]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Input"
+		  Position		  [25, 43, 55, 57]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Desired"
+		  Position		  [30, 88, 60, 102]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Equalized"
+		  Position		  [410, 43, 440, 57]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Err"
+		  Position		  [410, 98, 440, 112]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion"
+	      Ports		      [1, 1]
+	      Position		      [115, 30, 170, 70]
+	      ShowName		      off
+	      SourceBlock	      "dspobslib/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      ShowPortLabels	      off
+	      growRefPort	      off
+	      outframe		      "Sample-based"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion1"
+	      Ports		      [1, 1]
+	      Position		      [115, 125, 170, 165]
+	      ShowName		      off
+	      SourceBlock	      "dspobslib/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      ShowPortLabels	      off
+	      growRefPort	      off
+	      outframe		      "Sample-based"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "LMS algorithm"
+	      Ports		      [2, 2]
+	      Position		      [235, 146, 330, 204]
+	      BackgroundColor	      "cyan"
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"LMS algorithm"
+		Location		[515, 163, 1120, 503]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Input"
+		  Position		  [25, 43, 55, 57]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Desired"
+		  Position		  [30, 88, 60, 102]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Equalized"
+		  Position		  [410, 43, 440, 57]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Err"
+		  Position		  [410, 98, 440, 112]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum of\nElements"
+	      Ports		      [1, 1]
+	      Position		      [115, 210, 145, 240]
+	      Inputs		      "+"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutScaling	      "2^-10"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Equalized"
+	      Position		      [410, 43, 440, 57]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Err"
+	      Position		      [410, 98, 440, 112]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Input"
+	      SrcPort		      1
+	      DstBlock		      "Frame Status\nConversion"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "4 tap NeuroNet LMS time\ndomain equalizer"
+	  Ports			  [2, 2]
+	  Position		  [175, 311, 270, 369]
+	  BackgroundColor	  "cyan"
+	  TreatAsAtomicUnit	  off
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  System {
+	    Name		    "4 tap NeuroNet LMS time\ndomain equalizer"
+	    Location		    [515, 163, 1120, 503]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Input"
+	      Position		      [25, 43, 55, 57]
+	      Port		      "1"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Desired"
+	      Position		      [30, 88, 60, 102]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      LatchInput	      off
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "ADALINE\nNeural Net"
+	      Ports		      [2, 2]
+	      Position		      [235, 46, 330, 104]
+	      BackgroundColor	      "cyan"
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"ADALINE\nNeural Net"
+		Location		[515, 163, 1120, 503]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Input"
+		  Position		  [25, 43, 55, 57]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Desired"
+		  Position		  [30, 88, 60, 102]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Equalized"
+		  Position		  [410, 43, 440, 57]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Err"
+		  Position		  [410, 98, 440, 112]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion"
+	      Ports		      [1, 1]
+	      Position		      [115, 30, 170, 70]
+	      ShowName		      off
+	      SourceBlock	      "dspobslib/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      ShowPortLabels	      off
+	      growRefPort	      off
+	      outframe		      "Sample-based"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Frame Status\nConversion1"
+	      Ports		      [1, 1]
+	      Position		      [115, 125, 170, 165]
+	      ShowName		      off
+	      SourceBlock	      "dspobslib/Frame Status\nConversion"
+	      SourceType	      "Frame Status Conversion"
+	      ShowPortLabels	      off
+	      growRefPort	      off
+	      outframe		      "Sample-based"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "LMS algorithm"
+	      Ports		      [2, 2]
+	      Position		      [235, 146, 330, 204]
+	      BackgroundColor	      "cyan"
+	      TreatAsAtomicUnit	      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      System {
+		Name			"LMS algorithm"
+		Location		[515, 163, 1120, 503]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Input"
+		  Position		  [25, 43, 55, 57]
+		  Port			  "1"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Desired"
+		  Position		  [30, 88, 60, 102]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  LatchInput		  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Equalized"
+		  Position		  [410, 43, 440, 57]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Err"
+		  Position		  [410, 98, 440, 112]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum of\nElements"
+	      Ports		      [1, 1]
+	      Position		      [115, 210, 145, 240]
+	      Inputs		      "+"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutScaling	      "2^-10"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Equalized"
+	      Position		      [410, 43, 440, 57]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Err"
+	      Position		      [410, 98, 440, 112]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Input"
+	      SrcPort		      1
+	      DstBlock		      "Frame Status\nConversion"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DSP\nConstant1"
+	  Ports			  [0, 1]
+	  Position		  [40, 100, 90, 120]
+	  ShowName		  off
+	  AttributesFormatString  "\\n\\n\\n\\n"
+	  SourceBlock		  "dspsrcs4/DSP\nConstant"
+	  SourceType		  "DSP Constant"
+	  ShowPortLabels	  on
+	  Value			  "0"
+	  SampleMode		  "Discrete"
+	  discreteOutput	  "Frame-based"
+	  continuousOutput	  "Sample-based"
+	  sampTime		  "1"
+	  framePeriod		  "1"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  dataType		  "Inherit from 'Constant value'"
+	  isSigned		  on
+	  wordLen		  "16"
+	  udDataType		  "sfix(16)"
+	  fracBitsMode		  "Best precision"
+	  numFracBits		  "15"
+	  InterpretAs1D		  "off"
+	  Ts			  "1"
+	  FramebasedOutput	  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "DSP\nConstant3"
+	  Ports			  [0, 1]
+	  Position		  [40, 130, 90, 150]
+	  ShowName		  off
+	  AttributesFormatString  "\\n\\n\\n\\n"
+	  SourceBlock		  "dspsrcs4/DSP\nConstant"
+	  SourceType		  "DSP Constant"
+	  ShowPortLabels	  on
+	  Value			  "1"
+	  SampleMode		  "Discrete"
+	  discreteOutput	  "Frame-based"
+	  continuousOutput	  "Sample-based"
+	  sampTime		  "1"
+	  framePeriod		  "1"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  dataType		  "Inherit from 'Constant value'"
+	  isSigned		  on
+	  wordLen		  "16"
+	  udDataType		  "sfix(16)"
+	  fracBitsMode		  "Best precision"
+	  numFracBits		  "15"
+	  InterpretAs1D		  "off"
+	  Ts			  "1"
+	  FramebasedOutput	  "on"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Manual Switch"
+	  Ports			  [2, 1]
+	  Position		  [115, 107, 145, 143]
+	  ShowName		  off
+	  SourceBlock		  "simulink/Signal\nRouting/Manual Switch"
+	  SourceType		  "Manual Switch"
+	  ShowPortLabels	  on
+	  sw			  "0"
+	  action		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Equalized"
+	  Position		  [330, 23, 360, 37]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Err"
+	  Position		  [330, 53, 360, 67]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Wts"
+	  Position		  [330, 103, 360, 117]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "DSP\nConstant3"
+	  SrcPort		  1
+	  Points		  [0, -5]
+	  DstBlock		  "Manual Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "DSP\nConstant1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Manual Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Input"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  DstBlock		  "4 tap LMS time\ndomain equalizer1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Desired"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 115]
+	  DstBlock		  "4 tap LMS time\ndomain equalizer1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "4 tap LMS time\ndomain equalizer1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -110]
+	  DstBlock		  "Equalized"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "4 tap LMS time\ndomain equalizer1"
+	  SrcPort		  3
+	  Points		  [35, 0]
+	  DstBlock		  "Wts"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Decision Directed"
+	  Position		  [62, 88]
+	  ForegroundColor	  "blue"
+	}
+	Annotation {
+	  Name			  "Training Mode"
+	  Position		  [67, 163]
+	  ForegroundColor	  "blue"
+	}
+      }
+    }
+    Block {
+      BlockType		      Math
+      Name		      "Math\nfunctions"
+      Ports		      [1, 1]
+      Position		      [715, 218, 740, 242]
+      ShowName		      off
+      Operator		      "square"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Noise"
+      Ports		      [1, 1]
+      Position		      [240, 93, 300, 137]
+      BackgroundColor	      "yellow"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      System {
+	Name			"Noise"
+	Location		[616, 82, 1085, 335]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  Position		  [25, 43, 55, 57]
+	  Port			  "1"
+	  IconDisplay		  "Port number"
+	  LatchInput		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AWGN\nChannel"
+	  Ports			  [1, 1]
+	  Position		  [205, 29, 285, 71]
+	  SourceBlock		  "commchan3/AWGN\nChannel"
+	  SourceType		  "AWGN Channel"
+	  ShowPortLabels	  "on"
+	  seed			  "67"
+	  noiseMode		  "Signal to noise ratio  (SNR)"
+	  EbNodB		  "EbNodB"
+	  EsNodB		  "10"
+	  SNRdB			  "40"
+	  bitsPerSym		  "1"
+	  Ps			  "1"
+	  Tsym			  "Ts"
+	  variance		  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "AWGN\nChannel1"
+	  Ports			  [1, 1]
+	  Position		  [295, 129, 375, 171]
+	  SourceBlock		  "commchan3/AWGN\nChannel"
+	  SourceType		  "AWGN Channel"
+	  ShowPortLabels	  "on"
+	  seed			  "67"
+	  noiseMode		  "Signal to noise ratio  (SNR)"
+	  EbNodB		  "EbNodB"
+	  EsNodB		  "10"
+	  SNRdB			  "40"
+	  bitsPerSym		  "1"
+	  Ps			  "1"
+	  Tsym			  "Ts"
+	  variance		  "1"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Add"
+	  Ports			  [2, 1]
+	  Position		  [230, 110, 265, 185]
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutScaling		  "2^-10"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Channel\nModel"
+	  Ports			  [1, 1]
+	  Position		  [90, 22, 175, 78]
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  DialogController	  "dspDDGCreate"
+	  DialogControllerArgs	  "DataTag0"
+	  SourceBlock		  "dsparch4/Digital Filter"
+	  SourceType		  "Digital Filter"
+	  TypePopup		  "FIR (all zeros)"
+	  IIRFiltStruct		  "Direct form I transposed"
+	  AllPoleFiltStruct	  "Direct form transposed"
+	  FIRFiltStruct		  "Direct form transposed"
+	  CoeffSource		  "Specify via dialog"
+	  NumCoeffs		  "[1 -.3 .1 .2j]"
+	  DenCoeffs		  "[1 0.1]"
+	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
+	  LatticeCoeffs		  "[0.2 0.4]"
+	  denIgnore		  "on"
+	  FiltPerSampPopup	  "One filter per frame"
+	  IC			  "0"
+	  ICnum			  "0"
+	  ICden			  "0"
+	  additionalParams	  "off"
+	  allowOverrides	  "on"
+	  showCoeff		  "off"
+	  firstCoeffMode	  "Same word length as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  secondCoeffMode	  "Same as numerator"
+	  secondCoeffWordLength	  "16"
+	  secondCoeffFracLength	  "15"
+	  thirdCoeffMode	  "Same as input"
+	  thirdCoeffWordLength	  "16"
+	  thirdCoeffFracLength	  "15"
+	  showOut		  "off"
+	  outputMode		  "Same as input"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  showAcc		  "off"
+	  accumMode		  "Same as product output"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  showMpy		  "off"
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  showMem		  "off"
+	  memoryMode		  "Same as input"
+	  memoryWordLength	  "16"
+	  memoryFracLength	  "15"
+	  roundingMode		  "Floor"
+	  overflowMode		  "off"
+	  ScaleValues		  "1"
+	  scaleValueFracLength	  "14"
+	  tapSumMode		  "Same as input"
+	  tapSumWordLength	  "32"
+	  tapSumFracLength	  "30"
+	  stageIOMode		  "Same as input"
+	  stageIOWordLength	  "16"
+	  stageInFracLength	  "15"
+	  stageOutFracLength	  "15"
+	  LockScale		  "off"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Delay"
+	  Ports			  [1, 1]
+	  Position		  [80, 160, 135, 200]
+	  SourceBlock		  "dspsigops/Delay"
+	  SourceType		  "Delay"
+	  dly_unit		  "Samples"
+	  delay			  "1"
+	  ic_detail		  "off"
+	  dif_ic_for_ch		  "off"
+	  dif_ic_for_dly	  "off"
+	  ic			  "0"
+	  reset_popup		  "None"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [90, 115, 130, 145]
+	  Gain			  "0.8"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [165, 165, 205, 195]
+	  Gain			  "0.2"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  Position		  [420, 43, 450, 57]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Add"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Add"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Add"
+	  SrcPort		  1
+	  DstBlock		  "AWGN\nChannel1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Channel\nModel"
+	  SrcPort		  1
+	  DstBlock		  "AWGN\nChannel"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Channel\nModel"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "AWGN\nChannel"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Annotation {
+	  Name			  "Multipath channel"
+	  Position		  [202, 12]
+	  BackgroundColor	  "red"
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "QPSK\nDemodulator Baseband"
+      Ports		      [1, 1]
+      Position		      [595, 85, 670, 135]
+      SourceBlock	      "commdigbbndpm2/QPSK\nDemodulator\nBaseband"
+      SourceType	      "QPSK Demodulator Baseband"
+      ShowPortLabels	      on
+      OutType		      "Integer"
+      Dec		      "Binary"
+      Ph		      "pi/4"
+      numSamp		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "QPSK\nModulator\nBaseband"
+      Ports		      [1, 1]
+      Position		      [130, 91, 205, 139]
+      ShowName		      off
+      SourceBlock	      "commdigbbndpm2/QPSK\nModulator\nBaseband"
+      SourceType	      "QPSK Modulator Baseband"
+      ShowPortLabels	      on
+      InType		      "Integer"
+      Enc		      "Binary"
+      Ph		      "pi/4"
+      numSamp		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Random Integer\nGenerator1"
+      Ports		      [0, 1]
+      Position		      [20, 93, 100, 137]
+      FontName		      "Arial"
+      SourceBlock	      "commrandsrc2/Random Integer\nGenerator"
+      SourceType	      "Random Integer Generator"
+      ShowPortLabels	      on
+      mul		      "4"
+      seed		      "12345"
+      Ts		      "Ts"
+      frameBased	      on
+      sampPerFrame	      "100"
+      orient		      off
+      outDataType	      "double"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum1"
+      Ports		      [2, 1]
+      Position		      [765, 45, 785, 65]
+      NamePlacement	      "alternate"
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "-+|"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Unbuffer"
+      Ports		      [1, 1]
+      Position		      [350, 156, 400, 204]
+      SourceBlock	      "dspbuff3/Unbuffer"
+      SourceType	      "Unbuffer"
+      ic		      "0"
+    }
+    Line {
+      SrcBlock		      "Noise"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, -75]
+	DstBlock		"Before"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Buffer"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "QPSK\nModulator\nBaseband"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"Noise"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 65]
+	DstBlock		"Unbuffer"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Random Integer\nGenerator1"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	DstBlock		"QPSK\nModulator\nBaseband"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -70]
+	DstBlock		"Buffer1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "QPSK\nDemodulator Baseband"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	DstBlock		"Error Rate\nCalculation"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -55; 65, 0]
+      }
+    }
+    Line {
+      SrcBlock		      "Error Rate\nCalculation"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Error Rate Display"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Frame Conversion"
+      SrcPort		      1
+      Points		      [0, 0; 10, 0]
+      Branch {
+	DstBlock		"Adaptive Equalizer \nfrequency response"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 85]
+	DstBlock		"Complex to\nReal-Imag1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Complex to\nReal-Imag1"
+      SrcPort		      1
+      Points		      [0, 0; 15, 0]
+      Branch {
+	DstBlock		"Adaptive Filter \nTaps"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -40]
+	DstBlock		"Error Rate Display1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Frame Conversion1"
+      SrcPort		      1
+      DstBlock		      "Abs"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Frame Conversion2"
+      SrcPort		      1
+      Points		      [0, 0]
+      DstBlock		      "Math\nfunctions"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Math\nfunctions"
+      SrcPort		      1
+      Points		      [10, 0; 0, -20]
+      DstBlock		      "Error e(t)\nScope"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Sum1"
+      SrcPort		      1
+      DstBlock		      "Error message"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Delay1"
+      SrcPort		      1
+      Points		      [35, 0]
+      DstBlock		      "Sum1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "LMS Linear\nequalizer"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	Points			[5, 0; 0, -10]
+	Branch {
+	  DstBlock		  "QPSK\nDemodulator Baseband"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -70]
+	  DstBlock		  "After"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, 100; -155, 0]
+	DstBlock		"Error Rate Display2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "LMS Linear\nequalizer"
+      SrcPort		      3
+      Points		      [15, 0; 0, 125]
+      DstBlock		      "Frame Conversion"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Unbuffer"
+      SrcPort		      1
+      Points		      [25, 0; 0, -25]
+      DstBlock		      "LMS Linear\nequalizer"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Buffer1"
+      SrcPort		      1
+      Points		      [0, 30; 430, 0]
+      DstBlock		      "Error Rate\nCalculation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Buffer"
+      SrcPort		      1
+      Points		      [20, 0; 0, 10]
+      DstBlock		      "LMS Linear\nequalizer"
+      DstPort		      1
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    <     8    (     0         %    "
+"\"     $    !     0         .    0     8    (    !          %    \"     $    "
+"-     0         0    #0   $1I9VET86Q&:6QT97(    "
+  }
+}
+
+# Finite State Machines
+#
+#    Stateflow Version 6.2 (R14SP2) dated Jan 27 2005, 19:24:42
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"lab_4_equalizer_lms_buffer"
+		created              		"01-Oct-2012 14:57:18"
+		isLibrary            		0
+		firstTarget          		2
+		sfVersion            		62014000
+	}
+
+	target {
+		id                        		2
+		name                      		"sfun"
+		description               		"Default Simulink S-Function Target."
+		machine                   		1
+		linkNode                  		[1 0 0]
+	}
+}
